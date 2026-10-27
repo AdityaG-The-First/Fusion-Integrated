@@ -1,8 +1,9 @@
-from django.urls import path, include
-from .views import LeavePolicyViewSet, HolidayCalendarViewSet
+from django.urls import path
 
+from .views import LeaveApplicationListCreateView, LeaveTypeListView
 
 urlpatterns = [
-    path("policies/", LeavePolicyViewSet.as_view(), name="policies"),
-    path("holidays/", HolidayCalendarViewSet.as_view(), name="holidays"),
+    path("leave-types", LeaveTypeListView.as_view(), name="elm-leave-types"),
+    path("applications", LeaveApplicationListCreateView.as_view(),
+         name="elm-leave-applications"),
 ]
